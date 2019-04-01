@@ -9,7 +9,7 @@
 \usepackage{fancyvrb}
 \usepackage{xspace}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
-
+\usepackage{pgf-pie}
 
 \title{Proyecto 1}
 \subtitle{Un generador de Scanners}
@@ -26,11 +26,10 @@
     \newline I Semestre 2019 }
 }
 
-
-
 \begin{document}
 
     \maketitle
+    
     \begin{frame}{Tabla de Contenidos}
       \setbeamertemplate{section in doc}[sections numbered]
       \tableofcontents[hideallsubsections]
@@ -43,7 +42,7 @@
                 Flex es una herramienta de análisis lexico desarrollada para la generación de Scanners de lenguajes. Su nombre significa "fast lexical analyzer generator". Es la alternativa gratis y open-source a la herramienta "lex". 
         \end{alertblock}
         \end{frame}
-
+    
 
     \section{Scanning}
         \begin{frame}[fragile]{Scanning}
@@ -53,41 +52,33 @@
         \end{frame}
 
 
-    \section{Analisis Léxico}
+    \section{Gráficos}
         \begin{frame}[fragile,allowframebreaks]{Histograma}
         \begin{alertblock}{Histograma}
             A continuación se presenta un histograma el cual indica cuantas veces cada token fue encontrado cada 50 lineas, en el \textit{axis y} se puede ver la cantidad de ocurrencias mientras en el \textit{axis x} se muestra en cual rango de lineas de codigo sucedieron.
             \end{alertblock}
         \end{frame}
+     
+    \subsection{Gráfico Barras}
+        \input{bar_chart.tex}    
+    \subsection{Gráfico Pastel}
+        \input{pie_chart.tex}
     
-        \begin{frame}[fragile,allowframebreaks]{Histograma}
-        \begin{alertblock}{Histograma}
-            \includegraphics[scale=0.4]{histogram1.png}
-            \end{alertblock}
-        \end{frame}
-
-        \begin{frame}[fragile,allowframebreaks]{Histograma}
-        \begin{alertblock}{Histograma}
-            \includegraphics[scale=0.4]{histogram2.png}
-            \end{alertblock}
-        \end{frame}
-        
-        
+    \section{Analisis Léxico}
         \begin{frame}[fragile,allowframebreaks]{Analisis Léxico}
         \begin{alertblock}{Codigo fuente}
-            A continuación se presenta el codigo fuente con colores demostrando la división de Tokens.
+            A continuación se presenta el código fuente con colores demostrando la división de Tokens.
             \end{alertblock}
         \end{frame}
 
-
-    \input{source.tex}
+        \input{source.tex}
 
 
     {
         \setbeamercolor{palette primary}{fg=black, bg=yellow}
         \begin{frame}[standout]
             \begin{center}
-              Gracias!
+              ¡Muchas gracias!
             \end{center}
         \end{frame}
     }

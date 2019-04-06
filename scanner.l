@@ -9,7 +9,6 @@
 "//".*					     return COMMENT;        /* Comentario de una linea */
 ^"#".*					     return PREPROCESSOR;   /* Procesamiento */
 
-            /* Palabra Reservada */
 auto					return KEYWORD;
 double					return KEYWORD;
 int					    return KEYWORD;
@@ -44,7 +43,6 @@ static					return KEYWORD;
 while					return KEYWORD;
 
 
-
 [-+]?[0-9]+				return CONSTANTLITERAL;          /* Decimal */
 O[0-9]+					return CONSTANTLITERAL;          /* Octal */
 OX[0-9abcdef]+			return CONSTANTLITERAL;          /* Hexadecimal */
@@ -53,9 +51,6 @@ OX[0-9abcdef]+			return CONSTANTLITERAL;          /* Hexadecimal */
 \"[^\"]*\"              return CONSTANTSTRING;           /* Strings */
 [a-zA-Z_][_a-zA-Z0-9]*	return IDENTIFIER;               /* Identificadores Nombres Variables */
 
-
-
-			/* Aritmeticos */
 \+						return OPERATOR;
 - 						return OPERATOR;
 \* 						return OPERATOR;
@@ -64,18 +59,17 @@ OX[0-9abcdef]+			return CONSTANTLITERAL;          /* Hexadecimal */
 \+\+					return OPERATOR;
 "--"					return OPERATOR;
 					
-			/* Relacionales */						
 ==						return OPERATOR;
 !=						return OPERATOR;
 \> 						return OPERATOR;
 \< 						return OPERATOR;
 \>=						return OPERATOR;
 \<=						return OPERATOR;
-			/* Logicos */						
+					
 &&						return OPERATOR;
 \|\|					return OPERATOR;
 !						return OPERATOR;
-			/* Otros */					
+			
 & 						return OPERATOR;
 \| 						return OPERATOR;
 \^ 						return OPERATOR;
@@ -83,7 +77,7 @@ OX[0-9abcdef]+			return CONSTANTLITERAL;          /* Hexadecimal */
 \<\<					return OPERATOR;
 \>\>					return OPERATOR;					
 "?"						return OPERATOR;
-			/* Puntuadores */
+
 \(						return PUNCTUATOR;
 \)						return PUNCTUATOR;
 \{						return PUNCTUATOR;
@@ -95,9 +89,8 @@ OX[0-9abcdef]+			return CONSTANTLITERAL;          /* Hexadecimal */
 ;						return PUNCTUATOR;
 =						return PUNCTUATOR;
 
-
-
 [ \t\n]					return BLANK;   /* Espacio en Blanco */
+
 .						return ERROR;	/* Cualquier cosa de aqui en adelante es error */
 
 %%

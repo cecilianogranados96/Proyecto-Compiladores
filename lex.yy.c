@@ -908,390 +908,384 @@ YY_RULE_SETUP
 #line 10 "scanner.l"
 return PREPROCESSOR;   /* Procesamiento */
 	YY_BREAK
-/* Palabra Reservada */
 case 4:
 YY_RULE_SETUP
-#line 13 "scanner.l"
+#line 12 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 14 "scanner.l"
+#line 13 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 15 "scanner.l"
+#line 14 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 16 "scanner.l"
+#line 15 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 17 "scanner.l"
+#line 16 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 18 "scanner.l"
+#line 17 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 19 "scanner.l"
+#line 18 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 20 "scanner.l"
+#line 19 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 21 "scanner.l"
+#line 20 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 22 "scanner.l"
+#line 21 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 23 "scanner.l"
+#line 22 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 24 "scanner.l"
+#line 23 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 25 "scanner.l"
+#line 24 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 26 "scanner.l"
+#line 25 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 27 "scanner.l"
+#line 26 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 28 "scanner.l"
+#line 27 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 29 "scanner.l"
+#line 28 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 30 "scanner.l"
+#line 29 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 31 "scanner.l"
+#line 30 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 32 "scanner.l"
+#line 31 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 33 "scanner.l"
+#line 32 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 34 "scanner.l"
+#line 33 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 35 "scanner.l"
+#line 34 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 36 "scanner.l"
+#line 35 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 37 "scanner.l"
+#line 36 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 38 "scanner.l"
+#line 37 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 39 "scanner.l"
+#line 38 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 40 "scanner.l"
+#line 39 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 41 "scanner.l"
+#line 40 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 42 "scanner.l"
+#line 41 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 43 "scanner.l"
+#line 42 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 44 "scanner.l"
+#line 43 "scanner.l"
 return KEYWORD;
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 48 "scanner.l"
+#line 46 "scanner.l"
 return CONSTANTLITERAL;          /* Decimal */
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 49 "scanner.l"
+#line 47 "scanner.l"
 return CONSTANTLITERAL;          /* Octal */
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 50 "scanner.l"
+#line 48 "scanner.l"
 return CONSTANTLITERAL;          /* Hexadecimal */
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 51 "scanner.l"
+#line 49 "scanner.l"
 return CONSTANTLITERAL;          /* Fraccionario */
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 52 "scanner.l"
+#line 50 "scanner.l"
 return CONSTANTCHAR;             /* Caracter Solo */
 	YY_BREAK
 case 41:
 /* rule 41 can match eol */
 YY_RULE_SETUP
-#line 53 "scanner.l"
+#line 51 "scanner.l"
 return CONSTANTSTRING;           /* Strings */
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 54 "scanner.l"
+#line 52 "scanner.l"
 return IDENTIFIER;               /* Identificadores Nombres Variables */
 	YY_BREAK
-/* Aritmeticos */
 case 43:
 YY_RULE_SETUP
-#line 59 "scanner.l"
+#line 54 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 60 "scanner.l"
+#line 55 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 61 "scanner.l"
+#line 56 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 62 "scanner.l"
+#line 57 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 63 "scanner.l"
+#line 58 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 64 "scanner.l"
+#line 59 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 65 "scanner.l"
+#line 60 "scanner.l"
 return OPERATOR;
 	YY_BREAK
-/* Relacionales */						
 case 50:
 YY_RULE_SETUP
-#line 68 "scanner.l"
+#line 62 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 69 "scanner.l"
+#line 63 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 70 "scanner.l"
+#line 64 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 71 "scanner.l"
+#line 65 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 72 "scanner.l"
+#line 66 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 73 "scanner.l"
+#line 67 "scanner.l"
 return OPERATOR;
 	YY_BREAK
-/* Logicos */						
 case 56:
 YY_RULE_SETUP
-#line 75 "scanner.l"
+#line 69 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 76 "scanner.l"
+#line 70 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 77 "scanner.l"
+#line 71 "scanner.l"
 return OPERATOR;
 	YY_BREAK
-/* Otros */					
 case 59:
 YY_RULE_SETUP
-#line 79 "scanner.l"
+#line 73 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 80 "scanner.l"
+#line 74 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 81 "scanner.l"
+#line 75 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 82 "scanner.l"
+#line 76 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 83 "scanner.l"
+#line 77 "scanner.l"
 return OPERATOR;
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 84 "scanner.l"
+#line 78 "scanner.l"
 return OPERATOR;					
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 85 "scanner.l"
+#line 79 "scanner.l"
 return OPERATOR;
 	YY_BREAK
-/* Puntuadores */
 case 66:
 YY_RULE_SETUP
-#line 87 "scanner.l"
+#line 81 "scanner.l"
 return PUNCTUATOR;
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 88 "scanner.l"
+#line 82 "scanner.l"
 return PUNCTUATOR;
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 89 "scanner.l"
+#line 83 "scanner.l"
 return PUNCTUATOR;
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 90 "scanner.l"
+#line 84 "scanner.l"
 return PUNCTUATOR;
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 91 "scanner.l"
+#line 85 "scanner.l"
 return PUNCTUATOR;
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 92 "scanner.l"
+#line 86 "scanner.l"
 return PUNCTUATOR;
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
-#line 93 "scanner.l"
+#line 87 "scanner.l"
 return PUNCTUATOR;
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
-#line 94 "scanner.l"
+#line 88 "scanner.l"
 return PUNCTUATOR;
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 95 "scanner.l"
+#line 89 "scanner.l"
 return PUNCTUATOR;
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
-#line 96 "scanner.l"
+#line 90 "scanner.l"
 return PUNCTUATOR;
 	YY_BREAK
 case 76:
 /* rule 76 can match eol */
 YY_RULE_SETUP
-#line 100 "scanner.l"
+#line 92 "scanner.l"
 return BLANK;   /* Espacio en Blanco */
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 101 "scanner.l"
+#line 94 "scanner.l"
 return ERROR;	/* Cualquier cosa de aqui en adelante es error */
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 103 "scanner.l"
+#line 96 "scanner.l"
 ECHO;
 	YY_BREAK
-#line 1295 "lex.yy.c"
+#line 1289 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2261,7 +2255,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 103 "scanner.l"
+#line 96 "scanner.l"
 
 
 int yywrap(void)

@@ -2,7 +2,7 @@
 all: lex scanner
 
 scanner: scanner.h scanner.c lex.yy.c
-	gcc lex.yy.c scanner.c -o scanner
+	gcc lex.yy.c scanner.c -o scanner -w 
 
 lex: scanner.l
 	lex scanner.l > lex.yy.c

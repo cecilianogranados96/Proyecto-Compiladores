@@ -1,8 +1,7 @@
 /* COMENTARIO */
-
 /* otro comentario */
+int FUNCION() {
+	int a = 3;
 
-man2() {
-	int a = 3 + 4;
 }
 /* otro comentario */

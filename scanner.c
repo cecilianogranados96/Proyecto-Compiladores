@@ -45,21 +45,20 @@ char* tokens[total_tokens] = {"KEYWORD",
                       "ERROR",
                       "BLANK"};
 
-char* colores[total_tokens] = {"Sepia", //KEYWORD y
-                               "BlueViolet",     //IDENTIFIER y
-                               "BurntOrange",    //CONSTANTLITERAL y
-                               "ProcessBlue",        //OPERATOR y
-                               "OliveGreen",   //PUNCTUATOR y
+char* colores[total_tokens] = {"Sepia",         //KEYWORD y
+                               "BlueViolet",    //IDENTIFIER y
+                               "BurntOrange",   //CONSTANTLITERAL y
+                               "ProcessBlue",   //OPERATOR y
+                               "OliveGreen",    //PUNCTUATOR y
                                "Rhodamine",     //COMMENT
-                               "Gray",   //PREPROCESSOR y
-                               "Lavender", //CONSTANTCHAR
-                               "RubineRed",  //CONSTANTSTRING y
-                               "Red", //ERROR y
-                               "White"        //BLANK y
-                                };
+                               "Gray",          //PREPROCESSOR y
+                               "Lavender",      //CONSTANTCHAR
+                               "RubineRed",     //CONSTANTSTRING y
+                               "Red",           //ERROR y
+                               "White"          //BLANK y
+                               };
 
-char * comandos[]={"pdflatex -shell-escape -interaction=nonstopmode beamer.tex | grep \".*:[0-9]*:.*\" ",
-                   "open beamer.pdf"};
+char * comandos[]={"pdflatex -shell-escape -interaction=nonstopmode beamer.tex | grep \".*:[0-9]*:.*\" ","open beamer.pdf"};
 
 char * clear[]={"beamer.aux",
                 "beamer.log",
@@ -82,32 +81,17 @@ Row getToken(void){
 }
 
 int main(int argc, char *argv[]) {
-	//Precompiler
+	//PREPROCESO
 	char*filename=(char*)malloc(256 * sizeof(char));
 	sprintf (filename,"%s",argv[1]);
 	char*comando=(char*)malloc(256 * sizeof(char));
-	sprintf (comando,"gcc -c -save-temps %s",filename);
-	printf("\n %s \n ",comando);
+	sprintf (comando,"gcc -E -C %s > TSource.in",filename);
     system(comando);
-	//Renaming
-		//Renaming
-	sprintf ( filename,"%s",basename(filename));
-	char*t;
-	t=filename;
-	while (*t != '\0'){
-		t++;
-	}
-	t--;
-	*t='o';
-	remove(filename);
-	*t='s';
-	remove(filename);
-	*t='i';
-	rename(filename,"TSource.in");
 	stdin = freopen("TSource.in", "r", stdin);
-
-	datos_grafico = malloc (10 * sizeof(*datos_grafico));
-
+    //PREPROCESO
+    
+    
+    datos_grafico = malloc (10 * sizeof(*datos_grafico));
     //RESALTO DE SINTAXIS
     escribir_token();
 
@@ -122,6 +106,7 @@ int main(int argc, char *argv[]) {
     //ELIMINA TODOS LOS ARCHIVOS TEMPORALES
     for(int i=0;i<=sizeof(*clear);i++)
 	   remove(clear[i]);
+
 	return 0;
 }
 
@@ -143,16 +128,22 @@ void crear_grafico_plot(void){
 
 void crear_grafico_barras(void){
 	file = fopen("pie_chart.tex","w");
-    fprintf(file,"\\begin{frame}[fragile]{Histograma} \n\\begin{tikzpicture} \n\\pie[text=legend]{ ");
+    fprintf(file,"\\begin{frame}[fragile]{Histograma} \n\\begin{tikzpicture}[scale=0.9] \n\\pie[text=legend,explode=0.3]{ ");
     int total=0;
     for(int a=0;a<=total_tokens-2;a++)
         total += datos_grafico[0].token_count[a];
-    for(int a=0;a<=total_tokens-2;a++)
-        fprintf(file,"%d/%s, ",(datos_grafico[0].token_count[a]*100)/total,tokens[a]);
+    int valor;
+    for(int a=0;a<=total_tokens-2;a++){
+        valor = (datos_grafico[0].token_count[a]*100)/total;
+        if (a == total_tokens-2){
+            fprintf(file,"%d/%s-%d",valor,tokens[a],datos_grafico[0].token_count[a]);    
+        }else{
+            fprintf(file,"%d/%s-%d, ",valor,tokens[a],datos_grafico[0].token_count[a]);
+        }    
+    }
     fprintf(file,"}\n\\end{tikzpicture}\n\\end{frame}");
 	fclose(file);
 }
-
 
 void escribir_token(){
     file = fopen("source.tex","w");

@@ -45,17 +45,17 @@ char* tokens[total_tokens] = {"KEYWORD",
                       "ERROR",
                       "BLANK"};
 
-char* colores[total_tokens] = {"BurntOrange", //KEYWORD
-                               "Aquamarine",     //IDENTIFIER
-                               "ForestGreen",    //CONSTANTLITERAL
-                               "Goldenrod",        //OPERATOR
-                               "Fuchsia",   //PUNCTUATOR
+char* colores[total_tokens] = {"Sepia", //KEYWORD y
+                               "BlueViolet",     //IDENTIFIER y
+                               "BurntOrange",    //CONSTANTLITERAL y
+                               "ProcessBlue",        //OPERATOR y
+                               "OliveGreen",   //PUNCTUATOR y
                                "Rhodamine",     //COMMENT
-                               "Gray",   //PREPROCESSOR
-                               "GreenYellow", //CONSTANTCHAR
-                               "Emerald",  //CONSTANTSTRING
-                               "Red", //ERROR
-                               "White"        //BLANK
+                               "Gray",   //PREPROCESSOR y
+                               "Lavender", //CONSTANTCHAR
+                               "RubineRed",  //CONSTANTSTRING y
+                               "Red", //ERROR y
+                               "White"        //BLANK y
                                 };
 
 char * comandos[]={"pdflatex -shell-escape -interaction=nonstopmode beamer.tex | grep \".*:[0-9]*:.*\" ",
@@ -110,14 +110,14 @@ int main(int argc, char *argv[]) {
 
     //RESALTO DE SINTAXIS
     escribir_token();
-    
+
     //CREAR GRAFICOS
     crear_grafico_plot();
     crear_grafico_barras();
 
     //EJECUTAR COMANDOS PARA COMPILAR
     for(int i=0;i<=sizeof(*comandos);i++)
-	   system(comandos[i]); 
+	   system(comandos[i]);
 
     //ELIMINA TODOS LOS ARCHIVOS TEMPORALES
     for(int i=0;i<=sizeof(*clear);i++)
@@ -160,7 +160,7 @@ void escribir_token(){
 	rowtoken = getToken();
     fprintf(file,"\\begin{frame}[fragile,allowframebreaks]{Resaltado de sintaxis}~");
 	while(rowtoken.token) {
-        
+
         if(yylineno>=(ultimo_conteo_linea+contador_linea)){
             fprintf(file,"\n\\end{frame}\n \\begin{frame}[fragile,allowframebreaks]{Resaltado de Sintaxis}~");
             ultimo_conteo_linea=ultimo_conteo_linea+contador_linea;
@@ -169,7 +169,7 @@ void escribir_token(){
             fragmento_actual_grafico++;//MANEJA CANTIDADES DE TOKENS PARA ESPACIOS
             ultimo_conteo_linea_H=ultimo_conteo_linea_H+contador_linea_H;
         }
-        
+
         if(rowtoken.token==BLANK) {
             if(rowtoken.text[0]==0x9)
                 fprintf(file,"\\tab");
@@ -182,11 +182,11 @@ void escribir_token(){
             fprintf(file,"\\color{%s}\\begin{verbatim}%s\\end{verbatim}\\leavevmode",colores[rowtoken.token-1],rowtoken.text);
         if(rowtoken.token!=COMMENT&&rowtoken.token!=BLANK)
             fprintf(file,"\\color{%s}\\verb$%s$", colores[rowtoken.token-1],rowtoken.text);
-        datos_grafico[fragmento_actual_grafico].token_count[rowtoken.token-1]++; //MANEJA CANTIDAD DE TOKENS 
-        
-        
+        datos_grafico[fragmento_actual_grafico].token_count[rowtoken.token-1]++; //MANEJA CANTIDAD DE TOKENS
+
+
         rowtoken = getToken();
-        
+
     }
     fprintf(file,"\n\\end{frame}\n");
 	fclose(file);

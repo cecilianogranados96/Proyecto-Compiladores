@@ -34,14 +34,17 @@
     \section{Introducción}
         \begin{frame}[fragile]{Introducción}
         \begin{alertblock}{Introducción}
-                Flex es una herramienta de análisis lexico desarrollada para la generación de Scanners de lenguajes. Su nombre significa "fast lexical analyzer generator". Es la alternativa gratis y open-source a la herramienta "lex".
+                Flex es una herramienta de análisis lexico desarrollada para la generación de Scanners, programas que reconocen patrones léxicos en el texto.\\
+                Su nombre significa "fast lexical analyzer generator" y se encarga de leer las entradas recibidas para generar la descripción de un scanner en forma de pares de expresiones regulares y código C, llamadas "reglas".\\
+
         \end{alertblock}
         \end{frame}
 
     \section{Scanning}
         \begin{frame}[fragile]{Scanning}
             \begin{alertblock}{Scanning}
-                El proceso de Scanning es el proceso por el cual se identifican los diferentes lexemas de un lenguaje. El proceso es tan simple como la ejecución de un Automata Deterministico Finito. Para la generación del Scanner con Flex se utilizan las expresiones regulares, conocidas como `RegEx', para indicarle a Flex que construya apartir de las expresiones regulares un DFA en C, el cual luego se usa para adquirir los diferentes lexemas del lenguaje que se planea `Scannear'.
+                Mediante proceso de Scanning se identifican los diferentes lexemas de un lenguaje. Flex genera como salida un archivo C que define una rutina en específico, que junto con una biblioteca genera un ejecutable con la capacidad de analizar su entrada para la aparición de expresiones regulares. Cada vez que encuentra una, ejecuta el código C correspondiente.\\
+                Todo esto se puede traducir a que Flex es capaz de crear un "Deterministic Finite Automaton" (DFA) que se utilizará para adquirir los diferentes lexemas que se pretenden escánear.
             \end{alertblock}
         \end{frame}
 

@@ -50,15 +50,15 @@ char* colores[total_tokens] = {"Sepia",         //KEYWORD y
                                "BurntOrange",   //CONSTANTLITERAL y
                                "ProcessBlue",   //OPERATOR y
                                "OliveGreen",    //PUNCTUATOR y
-                               "Rhodamine",     //COMMENT
-                               "Gray",          //PREPROCESSOR y
+                               "Gray",     //COMMENT
+                               "MidnightBlue",          //PREPROCESSOR y
                                "Lavender",      //CONSTANTCHAR
                                "RubineRed",     //CONSTANTSTRING y
                                "Red",           //ERROR y
                                "White"          //BLANK y
                                };
 
-char * comandos[]={"pdflatex -shell-escape -interaction=nonstopmode beamer.tex | grep \".*:[0-9]*:.*\" ","open beamer.pdf"};
+char * comandos[]={"pdflatex -shell-escape -interaction=nonstopmode beamer.tex | grep \".*:[0-9]*:.*\" ","okular beamer.pdf -presentation"};
 
 char * clear[]={"beamer.aux",
                 "beamer.log",
@@ -89,8 +89,8 @@ int main(int argc, char *argv[]) {
     system(comando);
 	stdin = freopen("TSource.in", "r", stdin);
     //PREPROCESO
-    
-    
+
+
     datos_grafico = malloc (10 * sizeof(*datos_grafico));
     //RESALTO DE SINTAXIS
     escribir_token();
@@ -136,10 +136,10 @@ void crear_grafico_barras(void){
     for(int a=0;a<=total_tokens-2;a++){
         valor = (datos_grafico[0].token_count[a]*100)/total;
         if (a == total_tokens-2){
-            fprintf(file,"%d/%s-%d",valor,tokens[a],datos_grafico[0].token_count[a]);    
+            fprintf(file,"%d/%s-%d",valor,tokens[a],datos_grafico[0].token_count[a]);
         }else{
             fprintf(file,"%d/%s-%d, ",valor,tokens[a],datos_grafico[0].token_count[a]);
-        }    
+        }
     }
     fprintf(file,"}\n\\end{tikzpicture}\n\\end{frame}");
 	fclose(file);

@@ -1,0 +1,21 @@
+# 1 "tests/4.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 361 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "tests/4.c" 2
+# 1 "tests/5.c" 1
+
+
+
+man2() {
+ int a = 3;
+}
+# 2 "tests/4.c" 2
+
+main(){
+
+    const char str[] = "Hello, World!";
+    man2();
+}

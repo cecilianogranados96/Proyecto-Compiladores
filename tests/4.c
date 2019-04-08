@@ -1,6 +1,7 @@
-/* CODIGO OFUSCADO */
+#include "5.c"
+#define TEST "Hello, World!"
+main(){ 
 
-#include"5.txt"
-
-main()
-{ man2();}
+    const char str[] = TEST;
+    man2();
+}

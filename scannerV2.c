@@ -105,8 +105,9 @@ int main(int argc, char *argv[]) {
 	stdin=freopen("TSource.in", "r", stdin);
 	
 
+    
+    
 	datos_grafico = malloc (10 * sizeof(*datos_grafico));
-
     //RESALTO DE SINTAXIS
     escribir_token();
     

@@ -84,11 +84,13 @@ Row getToken(void){
 int main(int argc, char *argv[]) {
 	//Precompiler
 	char*filename=(char*)malloc(256 * sizeof(char));
-	sprintf ( filename,"%s",argv[1]);
+	sprintf (filename,"%s",argv[1]);
 	char*comando=(char*)malloc(256 * sizeof(char));
-	sprintf ( comando,"gcc -c -save-temps %s",filename);
-	system(comando);
+	sprintf (comando,"gcc -c -save-temps %s",filename);
+	printf("\n %s \n ",comando);
+    system(comando);
 	//Renaming
+		//Renaming
 	sprintf ( filename,"%s",basename(filename));
 	char*t;
 	t=filename;
@@ -102,8 +104,7 @@ int main(int argc, char *argv[]) {
 	remove(filename);
 	*t='i';
 	rename(filename,"TSource.in");
-	stdin=freopen("TSource.in", "r", stdin);
-	
+	stdin = freopen("TSource.in", "r", stdin);
 
 	datos_grafico = malloc (10 * sizeof(*datos_grafico));
 
@@ -121,7 +122,6 @@ int main(int argc, char *argv[]) {
     //ELIMINA TODOS LOS ARCHIVOS TEMPORALES
     for(int i=0;i<=sizeof(*clear);i++)
 	   remove(clear[i]);
-	remove("TSource.in");
 	return 0;
 }
 

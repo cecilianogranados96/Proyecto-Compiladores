@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <libgen.h>
 #include "scanner.h"
 #define total_tokens 11
 
@@ -80,7 +81,30 @@ Row getToken(void){
 	return myRow;
 }
 
-int main(void) {
+int main(int argc, char *argv[]) {
+	//Precompiler
+	char*filename=(char*)malloc(256 * sizeof(char));
+	sprintf ( filename,"%s",argv[1]);
+	char*comando=(char*)malloc(256 * sizeof(char));
+	sprintf ( comando,"gcc -c -save-temps %s",filename);
+	system(comando);
+	//Renaming
+	sprintf ( filename,"%s",basename(filename));
+	char*t;
+	t=filename;
+	while (*t != '\0'){
+		t++;
+	}
+	t--;
+	*t='o';
+	remove(filename);
+	*t='s';
+	remove(filename);
+	*t='i';
+	rename(filename,"TSource.in");
+	stdin=freopen("TSource.in", "r", stdin);
+	
+
 	datos_grafico = malloc (10 * sizeof(*datos_grafico));
 
     //RESALTO DE SINTAXIS
@@ -97,7 +121,7 @@ int main(void) {
     //ELIMINA TODOS LOS ARCHIVOS TEMPORALES
     for(int i=0;i<=sizeof(*clear);i++)
 	   remove(clear[i]);
-    
+	remove("TSource.in");
 	return 0;
 }
 

@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <libgen.h>
 #include "scanner.h"
+#include "precompiler.h"
 #define total_tokens 11
 
 typedef struct table_row {
@@ -81,32 +82,35 @@ Row getToken(void){
 }
 
 int main(int argc, char *argv[]) {
-	//PREPROCESO
 	char*filename=(char*)malloc(256 * sizeof(char));
 	sprintf (filename,"%s",argv[1]);
-	char*comando=(char*)malloc(256 * sizeof(char));
-	sprintf (comando,"gcc -E -C %s > TSource.in",filename);
-    system(comando);
-	stdin = freopen("TSource.in", "r", stdin);
+
     //PREPROCESO
+    Preprosesar(filename,"TSource.in");
+    //PREPROCESO
+    
+    system("./proyecto3");
 
-
-    datos_grafico = malloc (10 * sizeof(*datos_grafico));
-    //RESALTO DE SINTAXIS
-    escribir_token();
-
-    //CREAR GRAFICOS
-    crear_grafico_plot();
-    crear_grafico_barras();
-
-    //EJECUTAR COMANDOS PARA COMPILAR
-    for(int i=0;i<=sizeof(*comandos);i++)
-	   system(comandos[i]);
-
-    //ELIMINA TODOS LOS ARCHIVOS TEMPORALES
-    for(int i=0;i<=sizeof(*clear);i++)
-	   remove(clear[i]);
-
+    stdin = freopen("TSource.in", "r", stdin);
+    
+    char*ARGUMENTO=(char*)malloc(256 * sizeof(char));
+	sprintf (ARGUMENTO,"%s",argv[2]);
+    
+    if(strcmp(ARGUMENTO,"-B")==0){
+        datos_grafico = malloc (10 * sizeof(*datos_grafico));
+        //RESALTO DE SINTAXIS
+        escribir_token();
+        //CREAR GRAFICOS
+        crear_grafico_plot();
+        crear_grafico_barras();
+        //EJECUTAR COMANDOS PARA COMPILAR
+        for(int i=0;i<=sizeof(*comandos);i++)
+           system(comandos[i]);
+        //ELIMINA TODOS LOS ARCHIVOS TEMPORALES
+        for(int i=0;i<=sizeof(*clear);i++)
+           remove(clear[i]);
+    }
+    
 	return 0;
 }
 

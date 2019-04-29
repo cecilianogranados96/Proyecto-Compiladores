@@ -1,9 +1,9 @@
-#include "5.c"
-#define TEST "Hello, World!"
+#include "2.c"
+#define UNO 1
 
 int main(){ 
     /* otro comentario */
-    const char str[] = TEST; 
+    int uno = UNO; 
     /* otro comentario */
     FUNCION(); 
     /* otro comentario */

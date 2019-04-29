@@ -107,12 +107,8 @@ FUNCION:
 global main
 main:
 
-	assignConstant 0, 1 	;uno = 1
-
 	call FUNCION
 
 
-
-	mov eax, 1
-	int 0x80
+	ret
 

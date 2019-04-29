@@ -1,10 +1,10 @@
 #include "2.c"
 #define UNO 1
 
-int main(){ 
+int main(){
     /* otro comentario */
-    int uno = UNO; 
+    into uno = UNO;
     /* otro comentario */
-    FUNCION(); 
+    FUNCION();
     /* otro comentario */
 }

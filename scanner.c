@@ -59,7 +59,7 @@ char* colores[total_tokens] = {"Sepia",         //KEYWORD y
                                "White"          //BLANK y
                                };
 
-char * comandos[]={"pdflatex beamer.tex "};
+char * comandos[]={"pdflatex -shell-escape -interaction=nonstopmode beamer.tex | grep \".:[0-9]:.*\" ","okular beamer.pdf -presentation"};
 //okular beamer.pdf -presentation
 char * clear[]={"beamer.aux",
                 "beamer.log",
@@ -88,15 +88,15 @@ int main(int argc, char *argv[]) {
     //PREPROCESO
     Preprosesar(filename,"TSource.in");
     //PREPROCESO
-    
+
     system("./proyecto3 TSource.in");
 
     stdin = freopen("TSource.in", "r", stdin);
-    
-  
+
+
     char*ARGUMENTO=(char*)malloc(256 * sizeof(char));
 	sprintf (ARGUMENTO,"%s",argv[2]);
-    
+
     if(strcmp(ARGUMENTO,"-B")==0){
         datos_grafico = malloc (10 * sizeof(*datos_grafico));
         //RESALTO DE SINTAXIS
@@ -111,7 +111,7 @@ int main(int argc, char *argv[]) {
         for(int i=0;i<=sizeof(*clear);i++)
            remove(clear[i]);
     }
-    
+
 	return 0;
 }
 

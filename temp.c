@@ -4,10 +4,10 @@ int FUNCION() {
 	int a = 3;
 }
 
-int main(){ 
+int main(){
     
-    int uno = 1; 
+    into uno = 1;
     
-    FUNCION(); 
+    FUNCION();
     
 }

@@ -18,7 +18,9 @@ int whileLabel = 0;
 int doWhileLabel = 0;
 int switchNumber = 0;
 int forLabel = 0;
+
 char instruction[500];
+
 int pendingOP = FALSE;
 int haveElse = FALSE;
 int inTempFile = FALSE;
@@ -102,9 +104,9 @@ void save_id(void)
 			SymbolTable *symbol = getSymbolInPos(pos);
 			char error[100] = "";
 			char note[100] = "";
-			sprintf(error, "Error semantico, redeclaracion  de %s'%s'%s sin vinculacion", CWHTN, token, CWHT);
+			sprintf(error, "semantic error, redeclaration of %s'%s'%s with no linkage", CWHTN, token, CWHT);
 			yyerror(error);
-			sprintf(note, "nota, previa declaración de %s‘%s’%s fue aqui", CWHTN, symbol -> varName, CWHT);
+			sprintf(note, "note, previous declaration of %s‘%s’%s was here", CWHTN, symbol -> varName, CWHT);
 			yynote(note, symbol -> line, symbol -> column, TRUE, symbol -> cursorPosi);
 		}
 	}
@@ -113,9 +115,9 @@ void save_id(void)
 		SemanticRecord* RS = getSemanticRecordInPos(pos);
 		char error[100] = "";
 		char note[100] = "";
-		sprintf(error, "Error semantico, redeclaracion  de %s'%s'%s sin vinculacion", CWHTN, token, CWHT);
+		sprintf(error, "semantic error, redeclaration of %s'%s'%s with no linkage", CWHTN, token, CWHT);
 		yyerror(error);
-		sprintf(note, "nota, previa declaración de %s‘%s’%s fue aqui", CWHTN, RS -> currentToken, CWHT);
+		sprintf(note, "note, previous declaration of %s‘%s’%s was here", CWHTN, RS -> currentToken, CWHT);
 		yynote(note, RS -> line, RS -> column, TRUE, RS -> cursorPosi);
 	}
 	
@@ -323,13 +325,13 @@ void checkForDeclaredError(char *token, SemanticRecord* R)
 		if (!look_up_error_TS_ID(token))
 		{
 			char error[100];
-			sprintf(error, "error semantico, %s'%s'%s no declarado (primer uso en esta función)", CWHTN, token, CWHT);
+			sprintf(error, "semantic error, %s'%s'%s undeclared (first use in this function)", CWHTN, token, CWHT);
 			yyerror(error);
 
 			if (unDecleared == FALSE)
 			{
 				char note[100];
-				sprintf(note, "nota, cada identificador no declarado se reporta solo una vez por cada función que la que aparece ");
+				sprintf(note, "note, each undeclared identifier is reported only once for each function it appears in");
 				yynote(note, R -> line, R -> column, FALSE, R -> cursorPosi);
 				unDecleared = TRUE;
 			}
@@ -795,7 +797,8 @@ void writeCodeNeeded(DO_Data* op1, int operator, DO_Data* op2, SemanticRecord* d
 			sprintf(instruction, "\ncompL%d:\n\tmov eax, 0\n\nexitComp%d:", compareLabel, compareLabel);
 			compareLabel++;
 		}
-		else if (operator == NE_OP){
+		else if (operator == NE_OP)
+		{
 			sprintf(instruction, "\tmov eax, [esp + %d] \t;%s", op2 -> stackPos, op2 -> varName);
 			generateCode(instruction);
 
@@ -1406,7 +1409,7 @@ void process_function(void)
 	if (symbol -> stackPos == -1)
 	{
 		char warning[100];
-		sprintf(warning, "alerta, declaración implícita de la función %s‘%s’%s ", CWHTN, id, CWHT);
+		sprintf(warning, "warning, implicit declaration of function %s‘%s’%s [-Wimplicit-function-declaration]", CWHTN, id, CWHT);
 		yywarning(warning, RS -> line, RS -> column, TRUE, RS -> cursorPosi);	
 	}
 
@@ -1426,12 +1429,12 @@ void call_functionNoParams(void)
 void generateCode(char *instruction)
 {
 	if(inTempFile){
-		//assembly = fopen("temp_for.txt", "a");
+		assembly = fopen("temp_for.txt", "a");
 
 	}else{
-		//assembly = fopen("assembly.asm", "a");
+		assembly = fopen("assembly.asm", "a");
 	}	
-	//fprintf(assembly, "%s\n", instruction);
+	fprintf(assembly, "%s\n", instruction);
 	fclose(assembly);
 }
 
@@ -2007,9 +2010,9 @@ void begin_for(void){
 }
 
 void redirect_code(void){
-	//assembly = fopen("temp_for.txt", "w");
+	assembly = fopen("temp_for.txt", "w");
 	inTempFile = TRUE;
-	//fclose(assembly);
+	fclose(assembly);
 } 
 
 void restore_code(void){
@@ -2025,8 +2028,8 @@ void end_for(void){
 	FILE *file;
 	int c;
 	int i = 0;
-	//file = fopen("temp_for.txt", "r");
-	/*
+	file = fopen("temp_for.txt", "r");
+	
 	if (file) {
 		while ((c = getc(file)) != EOF){
 		    instruction[i] = '\0';
@@ -2038,7 +2041,7 @@ void end_for(void){
 		fclose(file);
 		//remove("temp_for.txt");
 	}
-    */
+
 
 	generateCode(instruction);
 	
@@ -2088,7 +2091,7 @@ void process_break(void)
 	}
 		
 	else
-		yyerror("Error semántico, declaración de ruptura no dentro de bucle o switch");
+		yyerror("semantic error, break statement not within loop or switch");
 
 	
 

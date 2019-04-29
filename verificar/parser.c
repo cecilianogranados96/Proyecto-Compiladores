@@ -15,24 +15,32 @@ void printError(char *errorType, char *token, int line, int previousColumn, int 
 void printLineCodeInfo(int column);
 void printNote(char *note,  char *token, int line, int column, const char *errorInfo, int cursorPos, int writeCode);
 void printWarning(char* warning, char *token, int line, int column, const char *warningInfo, int cursorPos, int writeCode);
-void parser(char* fileNameParse);
+int parser(char* fileNameParse);
 
 char fileNameParse[50];
 char lineCode[5000];
 int numberOfErrors = 0;
 FILE *FileTemp;
 
-void parser(char fileNamePar[])
+int parser(char fileNamePar[])
 {
 	strcpy(fileNameParse, fileNamePar);
 	FileTemp = fopen(fileNameParse, "r");
+
 	if (FileTemp != NULL){
 		yyin = FileTemp;
+
+
 		yyparse();
+	
+	
 		fclose(FileTemp);
-        printf("\n\n Compilación Finalizada con %d errores.\n", numberOfErrors);
+		
+
+			printf("\n\nCompilation finished with %d errors.\n", numberOfErrors);
 	}
 
+	return 0;
 }
 
 void printError(char *errorType, char *token, int line, int previousColumn, int column, const char *errorInfo, int cursorPos)
@@ -58,15 +66,19 @@ void printError(char *errorType, char *token, int line, int previousColumn, int 
 
 	
 	//PRINT ERROR WITH COLORS
-	if (strcmp(errorType, "lexical error") == 0){
+	if (strcmp(errorType, "lexical error") == 0)
+	{
 		printf("%s%s:%d:%d: %s%s: %s'%s' %s\n", CWHTN, fileNameParse, line, column, CRED, errorType, CWHT, token, errorInfo);
 
-	}else{
+	}
+	else 
+	{
+		
 		printf("%s%s:%d:%d: %s%s: %s", CWHTN, fileNameParse, line, previousColumn + 1, CRED, errorType, CWHT);
 		
 		if (strcmp(token, "\0") == 0)
 		{
-			printf(" declaración esperada o declaración al final de la entrada\n");
+			printf(" expected statement or declaration at the end of input\n");
 		}
 		else
 		{
@@ -91,7 +103,7 @@ void printError(char *errorType, char *token, int line, int previousColumn, int 
 					token = "string constant";
 				}
 				if (strcmp(errorType, "syntax error") == 0)
-					printf(" antes %s'%s'%s token \n", CWHTN, token, CWHT);
+					printf(" before %s'%s'%s token \n", CWHTN, token, CWHT);
 				else
 					printf("\n");
 			}
@@ -168,6 +180,8 @@ void printWarning(char* warning, char *token, int line, int column, const char *
 	fseek(FileTemp, cursor, SEEK_SET);
 
 	printf("%s%s:%d:%d: %s%s: %s", CWHTN, fileNameParse, line, column, CMAG, warning, CWHT);
+	
+	
 	
 	int j = 8;
 	while (j < strlen(warningInfo))

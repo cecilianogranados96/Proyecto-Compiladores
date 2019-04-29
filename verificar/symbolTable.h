@@ -328,5 +328,8 @@ void printSymbols(void)
 		}
 	
 	}
+
 	printf("END--------\n\n");	
 }
+
+

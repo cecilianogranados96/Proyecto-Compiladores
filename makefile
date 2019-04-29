@@ -14,7 +14,7 @@ clean:
 
 
 main: y.tab.c y.tab.h lex.yy.c
-	gcc -o proyecto3 verificar/main.c verificar/getToken.c verificar/y.tab.c verificar/lex.yy.c -w
+	gcc -o proyecto3 verificar/main.c verificar/getToken.c verificar/y.tab.c verificar/lex.yy.c  -lfl -ly -ll -lm 
  
 y.tab.c y.tab.h:      
 	bison -yd verificar/bison.y 

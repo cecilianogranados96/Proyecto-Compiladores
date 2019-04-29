@@ -14,11 +14,16 @@ int nextToken;
 
 //FUNCTION RETURNS THE NEXT TOKEN.
 int getToken(void)
-{
-	if (yytext != NULL){
+{	
+
+	if (yytext != NULL)
+	{
 		previousToken = strdup(yytext);
 		previousTokenCode = nextToken;
 	}
+
 	nextToken = yylex();
+
 	return nextToken;
 }
+

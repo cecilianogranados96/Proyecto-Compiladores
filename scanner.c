@@ -59,8 +59,8 @@ char* colores[total_tokens] = {"Sepia",         //KEYWORD y
                                "White"          //BLANK y
                                };
 
-char * comandos[]={"pdflatex -shell-escape -interaction=nonstopmode beamer.tex | grep \".:[0-9]:.*\" ","okular beamer.pdf -presentation"};
-//okular beamer.pdf -presentation
+char * comandos[]={"pdflatex -shell-escape -interaction=nonstopmode beamer.tex | grep \".*:[0-9]*:.*\"  ","okular beamer.pdf -presentation"};
+
 char * clear[]={"beamer.aux",
                 "beamer.log",
                 "beamer.nav",
@@ -89,29 +89,28 @@ int main(int argc, char *argv[]) {
     Preprosesar(filename,"TSource.in");
     //PREPROCESO
 
-    system("./proyecto3 TSource.in");
+    system("./sintaxis TSource.in");
 
     stdin = freopen("TSource.in", "r", stdin);
 
-
-    char*ARGUMENTO=(char*)malloc(256 * sizeof(char));
-	sprintf (ARGUMENTO,"%s",argv[2]);
-
-    if(strcmp(ARGUMENTO,"-B")==0){
-        datos_grafico = malloc (10 * sizeof(*datos_grafico));
-        //RESALTO DE SINTAXIS
-        escribir_token();
-        //CREAR GRAFICOS
-        crear_grafico_plot();
-        crear_grafico_barras();
-        //EJECUTAR COMANDOS PARA COMPILAR
-        for(int i=0;i<=sizeof(*comandos);i++)
-           system(comandos[i]);
-        //ELIMINA TODOS LOS ARCHIVOS TEMPORALES
-        for(int i=0;i<=sizeof(*clear);i++)
-           remove(clear[i]);
-    }
-
+		if (argc > 2) {
+		  char*ARGUMENTO=(char*)malloc(256 * sizeof(char));
+			sprintf (ARGUMENTO,"%s",argv[2]);
+		    if(strcmp(ARGUMENTO,"-B")==0){
+		        datos_grafico = malloc (10 * sizeof(*datos_grafico));
+		        //RESALTO DE SINTAXIS
+		        escribir_token();
+		        //CREAR GRAFICOS
+		        crear_grafico_plot();
+		        crear_grafico_barras();
+		        //EJECUTAR COMANDOS PARA COMPILAR
+		        for(int i=0;i<=sizeof(*comandos);i++)
+		           system(comandos[i]);
+		        //ELIMINA TODOS LOS ARCHIVOS TEMPORALES
+		        for(int i=0;i<=sizeof(*clear);i++)
+		           remove(clear[i]);
+		    }
+			}
 	return 0;
 }
 

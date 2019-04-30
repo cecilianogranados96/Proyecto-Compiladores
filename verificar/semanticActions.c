@@ -1428,6 +1428,7 @@ void call_functionNoParams(void)
 }
 void generateCode(char *instruction)
 {
+	/*
 	if(inTempFile){
 		assembly = fopen("temp_for.txt", "a");
 
@@ -1436,6 +1437,7 @@ void generateCode(char *instruction)
 	}
 	fprintf(assembly, "%s\n", instruction);
 	fclose(assembly);
+	*/
 }
 
 
@@ -2010,9 +2012,9 @@ void begin_for(void){
 }
 
 void redirect_code(void){
-	assembly = fopen("temp_for.txt", "w");
+	//assembly = fopen("temp_for.txt", "w");
 	inTempFile = TRUE;
-	fclose(assembly);
+	//fclose(assembly);
 }
 
 void restore_code(void){
@@ -2028,6 +2030,7 @@ void end_for(void){
 	FILE *file;
 	int c;
 	int i = 0;
+	/*
 	file = fopen("temp_for.txt", "r");
 
 	if (file) {
@@ -2039,9 +2042,10 @@ void end_for(void){
 		instruction[i] = '\0';
 
 		fclose(file);
-		//remove("temp_for.txt");
-	}
 
+
+	}
+	*/
 
 	generateCode(instruction);
 
@@ -2101,6 +2105,7 @@ void process_break(void)
 void initializeOutputFile(void)
 {
 
+	/*
 	assembly = fopen("assembly.asm", "w");
 
 	fprintf(assembly, "%s\n", addIDs);
@@ -2123,5 +2128,5 @@ void initializeOutputFile(void)
 
 
 	fclose(assembly);
-
+	*/
 }

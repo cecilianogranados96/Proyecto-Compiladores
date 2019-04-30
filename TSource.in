@@ -6,8 +6,10 @@ int FUNCION() {
 
 int main(){
     
-    into uno = 1;
+    int uno = 1;
     
     FUNCION();
     
-}
+    for (uno = 2;uno<4;uno++){
+      uno++;
+    }

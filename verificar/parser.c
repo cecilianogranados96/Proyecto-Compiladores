@@ -29,23 +29,17 @@ int parser(char fileNamePar[])
 
 	if (FileTemp != NULL){
 		yyin = FileTemp;
-
-
 		yyparse();
-	
-	
 		fclose(FileTemp);
-		
-
-			printf("\n\nCompilation finished with %d errors.\n", numberOfErrors);
+		printf("\n\nCompilacion terminada con %d errores.\n", numberOfErrors);
 	}
 
 	return 0;
 }
 
 void printError(char *errorType, char *token, int line, int previousColumn, int column, const char *errorInfo, int cursorPos)
-{	
-	
+{
+
 	numberOfErrors++;
 	//GET ALL THE LINE
 	memset(lineCode, '\0', 5000);
@@ -64,18 +58,18 @@ void printError(char *errorType, char *token, int line, int previousColumn, int 
 	}
 	fseek(FileTemp, cursor, SEEK_SET);
 
-	
+
 	//PRINT ERROR WITH COLORS
 	if (strcmp(errorType, "lexical error") == 0)
 	{
 		printf("%s%s:%d:%d: %s%s: %s'%s' %s\n", CWHTN, fileNameParse, line, column, CRED, errorType, CWHT, token, errorInfo);
 
 	}
-	else 
+	else
 	{
-		
+
 		printf("%s%s:%d:%d: %s%s: %s", CWHTN, fileNameParse, line, previousColumn + 1, CRED, errorType, CWHT);
-		
+
 		if (strcmp(token, "\0") == 0)
 		{
 			printf(" expected statement or declaration at the end of input\n");
@@ -97,7 +91,7 @@ void printError(char *errorType, char *token, int line, int previousColumn, int 
 					printf("%c", errorInfo[j]);
 					j ++;
 				}
-			
+
 				if (strlen(token) > 1 && token[0] == '"')
 				{
 					token = "string constant";
@@ -107,7 +101,7 @@ void printError(char *errorType, char *token, int line, int previousColumn, int 
 				else
 					printf("\n");
 			}
-			else 
+			else
 			{
 				j = 14;
 				while (j < strlen(errorInfo))
@@ -119,7 +113,7 @@ void printError(char *errorType, char *token, int line, int previousColumn, int 
 			}
 		}
 		column = previousColumn;
-		
+
 	}
 
 	printLineCodeInfo(column);
@@ -146,9 +140,9 @@ void printNote(char* note, char *token, int line, int column, const char *noteIn
 	fseek(FileTemp, cursor, SEEK_SET);
 
 	printf("%s%s:%d:%d: %s%s: %s", CWHTN, fileNameParse, line, column, CCYN, note, CWHT);
-	
-	
-	
+
+
+
 	int j = 5;
 	while (j < strlen(noteInfo))
 	{
@@ -180,9 +174,9 @@ void printWarning(char* warning, char *token, int line, int column, const char *
 	fseek(FileTemp, cursor, SEEK_SET);
 
 	printf("%s%s:%d:%d: %s%s: %s", CWHTN, fileNameParse, line, column, CMAG, warning, CWHT);
-	
-	
-	
+
+
+
 	int j = 8;
 	while (j < strlen(warningInfo))
 	{

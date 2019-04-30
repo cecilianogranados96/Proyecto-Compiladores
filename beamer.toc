@@ -1,6 +1,0 @@
-\beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{2}{0}{1}
-\beamer@sectionintoc {2}{Scanning}{3}{0}{2}
-\beamer@sectionintoc {3}{Gr\IeC {\'a}ficos}{4}{0}{3}
-\beamer@subsectionintoc {3}{1}{Gr\IeC {\'a}fico Barras}{5}{0}{3}
-\beamer@subsectionintoc {3}{2}{Gr\IeC {\'a}fico Pastel}{6}{0}{3}
-\beamer@sectionintoc {4}{Analisis L\IeC {\'e}xico}{7}{0}{4}

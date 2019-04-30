@@ -3,8 +3,10 @@
 
 int main(){
     /* otro comentario */
-    into uno = UNO;
+    int uno = UNO;
     /* otro comentario */
     FUNCION();
     /* otro comentario */
-}
+    for (uno = 2;uno<4;uno++){
+      uno++;
+    }

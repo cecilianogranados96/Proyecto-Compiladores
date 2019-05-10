@@ -10,3 +10,4 @@ int main(){
     for (uno = 2;uno<4;uno++){
       uno++;
     }
+}

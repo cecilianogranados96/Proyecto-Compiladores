@@ -104,7 +104,7 @@ void save_id(void)
 			SymbolTable *symbol = getSymbolInPos(pos);
 			char error[100] = "";
 			char note[100] = "";
-			sprintf(error, "Error semantico, redeclaracion  de %s'%s'%s sin vinculacion", CWHTN, token, CWHT);
+			sprintf(error, "Error semántico, redeclaracion  de %s'%s'%s sin vinculacion", CWHTN, token, CWHT);
 			yyerror(error);
 			sprintf(note, "nota, previa declaración de %s‘%s’%s fue aqui", CWHTN, symbol -> varName, CWHT);
 			yynote(note, symbol -> line, symbol -> column, TRUE, symbol -> cursorPosi);
@@ -115,7 +115,7 @@ void save_id(void)
 		SemanticRecord* RS = getSemanticRecordInPos(pos);
 		char error[100] = "";
 		char note[100] = "";
-		sprintf(error, "Error semantico, redeclaracion  de %s'%s'%s sin vinculacion", CWHTN, token, CWHT);
+		sprintf(error, "Error semántico, redeclaracion  de %s'%s'%s sin vinculacion", CWHTN, token, CWHT);
 		yyerror(error);
 		sprintf(note, "nota, previa declaración de %s‘%s’%s fue aqui", CWHTN, RS -> currentToken, CWHT);
 		yynote(note, RS -> line, RS -> column, TRUE, RS -> cursorPosi);
@@ -325,7 +325,7 @@ void checkForDeclaredError(char *token, SemanticRecord* R)
 		if (!look_up_error_TS_ID(token))
 		{
 			char error[100];
-			sprintf(error, "error semantico, %s'%s'%s no declarado (primer uso en esta función)", CWHTN, token, CWHT);
+			sprintf(error, "Error semántico, %s'%s'%s no declarado (primer uso en esta función)", CWHTN, token, CWHT);
 			yyerror(error);
 
 			if (unDecleared == FALSE)
@@ -1467,7 +1467,7 @@ void eval_unary(void)
 		else
 		{
 			char error[100];
-			sprintf(error, "Error semantico, lvalue required as increment operand");
+			sprintf(error, "Error semántico, lvalue required as increment operand");
 			yyerror(error);
 		}
 

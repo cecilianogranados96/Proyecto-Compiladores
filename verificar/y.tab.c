@@ -2463,12 +2463,12 @@ yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
       case N:                               \
         yyformat = S;                       \
       break
-      YYCASE_(0, YY_("syntax error"));
-      YYCASE_(1, YY_("syntax error, unexpected %s"));
-      YYCASE_(2, YY_("syntax error, unexpected %s, expecting %s"));
-      YYCASE_(3, YY_("syntax error, unexpected %s, expecting %s or %s"));
-      YYCASE_(4, YY_("syntax error, unexpected %s, expecting %s or %s or %s"));
-      YYCASE_(5, YY_("syntax error, unexpected %s, expecting %s or %s or %s or %s"));
+      YYCASE_(0, YY_("Error de sintaxis"));
+      YYCASE_(1, YY_("Error de sintaxis, carácter %s inesperado "));
+      YYCASE_(2, YY_("Error de sintaxis, carácter %s inesperado, se esperaba %s"));
+      YYCASE_(3, YY_("Error de sintaxis, carácter %s inesperado, se esperaba %s ó %s"));
+      YYCASE_(4, YY_("Error de sintaxis, carácter %s inesperado, se esperaba %s ó %s ó %s"));
+      YYCASE_(5, YY_("Error de sintaxis, carácter %s inesperado, se esperaba %s ó %s ó %s ó %s"));
 # undef YYCASE_
     }
 
@@ -2780,12 +2780,12 @@ yyreduce:
     {
         case 2:
 #line 63 "bison.y" /* yacc.c:1646  */
-    { 
-						
+    {
+
 						if(nextToken == IDENTIFIER)
-							process_id(); 
+							process_id();
 						else if (nextToken == '(')
-							process_function(); 
+							process_function();
 						else if (nextToken == '=' || 275 <= nextToken <= 284)
 							verify_id_for_Assign();
 					}
@@ -3280,11 +3280,11 @@ yyreduce:
 
   case 149:
 #line 347 "bison.y" /* yacc.c:1646  */
-    { 
+    {
 					if(yychar == IDENTIFIER || yychar == I_CONSTANT || yychar == F_CONSTANT)
-						yyerrok; 
+						yyerrok;
 
-					yyclearin;  
+					yyclearin;
 					clearSemanticRecords(); }
 #line 3290 "y.tab.c" /* yacc.c:1646  */
     break;
@@ -3978,6 +3978,3 @@ yyreturn:
 
 
 #include "semanticActions.c"
-
-
-

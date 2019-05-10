@@ -83,10 +83,27 @@ Row getToken(void){
 
 int main(int argc, char *argv[]) {
 	char*filename=(char*)malloc(256 * sizeof(char));
-	sprintf (filename,"%s",argv[1]);
+	int argumentos = 0;
+	if (argc > 0) {
+			argumentos = 1;
+      if (argc > 1) {
+					argumentos = 2;
+      	}if (argc > 3){
+					argumentos = 4;
+				}}
 
+	if (argumentos == 1 || argumentos == 4){
+
+		printf("Error de entrada.\n");
+		printf("El programa se podrá ejecutar de las siguientes maneras:\n\n");
+		printf("1- .//compilar archivo.c\n");
+		printf("2- .//compilar archivo.c -B\n");
+		printf("Con la opción 2 se desplegará una presentación con los detalles del programa.\n");
+
+	}else{
+		sprintf (filename,"%s",argv[1]);
     //PREPROCESO
-    Preprosesar(filename,"TSource.in");
+		Preprosesar(filename,"TSource.in");
     //PREPROCESO
 
     system("./sintaxis TSource.in");
@@ -96,21 +113,31 @@ int main(int argc, char *argv[]) {
 		if (argc > 2) {
 		  char*ARGUMENTO=(char*)malloc(256 * sizeof(char));
 			sprintf (ARGUMENTO,"%s",argv[2]);
-		    if(strcmp(ARGUMENTO,"-B")==0){
-		        datos_grafico = malloc (10 * sizeof(*datos_grafico));
-		        //RESALTO DE SINTAXIS
-		        escribir_token();
-		        //CREAR GRAFICOS
-		        crear_grafico_plot();
-		        crear_grafico_barras();
-		        //EJECUTAR COMANDOS PARA COMPILAR
-		        for(int i=0;i<=sizeof(*comandos);i++)
-		           system(comandos[i]);
-		        //ELIMINA TODOS LOS ARCHIVOS TEMPORALES
-		        for(int i=0;i<=sizeof(*clear);i++)
-		           remove(clear[i]);
-		    }
-			}
+				if(strcmp(ARGUMENTO,"-B")==0){
+ 		        datos_grafico = malloc (10 * sizeof(*datos_grafico));
+ 		        //RESALTO DE SINTAXIS
+ 		        escribir_token();
+ 		        //CREAR GRAFICOS
+ 		        crear_grafico_plot();
+ 		        crear_grafico_barras();
+ 		        //EJECUTAR COMANDOS PARA COMPILAR
+ 		        for(int i=0;i<=sizeof(*comandos);i++)
+ 		           system(comandos[i]);
+ 		        //ELIMINA TODOS LOS ARCHIVOS TEMPORALES
+ 		        for(int i=0;i<=sizeof(*clear);i++)
+ 		           remove(clear[i]);
+ 		    }else{
+					printf("Argumento no reconocido.\n");
+					printf("Si desea mostrar la presentación con los detalles de compilación, ejecute el programa de la siguiente manera:\n");
+					printf(".//compilador archivo.c -B\n");
+				}
+
+
+		}
+
+}
+
+
 	return 0;
 }
 

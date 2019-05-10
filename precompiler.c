@@ -287,6 +287,7 @@ int verificarArgs(char*s,char *out,char *args){
     int i,pos;
     i=pos=0;
     char stop = '\0';
+
     while(s[pos]!=stop){
         if (s[pos]=='('){
             stop=')';
@@ -424,22 +425,26 @@ int Preprosesar(char* input,char* output){
     posLast=0;
     strcpy(def,"define");
     strcpy(inc,"include");
+
     FILE* Input=fopen(input,"r");
+
     if (Input==NULL){
-	printf("Archivo de entrada no encontrado\n");
-	return 0;
+	    printf("Archivo de entrada no encontrado\n");
+      printf("El archivo debe tener extensión .c\n");
+	    return 0;
     }
     FILE* Output=fopen(output,"w");
     if (Output==NULL){
-	printf("Archivo de salida creado incorrectamente\n");
-	return 0;
+    printf("Archivo de salida creado incorrectamente\n");
+    return 0;
     }
+
     int res;
     fclose(Output);
     Output=fopen(output,"a");
     if (Output==NULL){
-	printf("Archivo de salida creado incorrectamente\n");
-	return 0;
+	     printf("Archivo de salida creado incorrectamente\n");
+	     return 0;
     }
     res=Preproses(Input,Output,input);
     fclose(Output);

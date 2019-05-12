@@ -1428,7 +1428,7 @@ void call_functionNoParams(void)
 }
 void generateCode(char *instruction)
 {
-	/*
+
 	if(inTempFile){
 		assembly = fopen("temp_for.txt", "a");
 
@@ -1437,7 +1437,7 @@ void generateCode(char *instruction)
 	}
 	fprintf(assembly, "%s\n", instruction);
 	fclose(assembly);
-	*/
+	
 }
 
 
@@ -2030,7 +2030,7 @@ void end_for(void){
 	FILE *file;
 	int c;
 	int i = 0;
-	
+
 	file = fopen("temp_for.txt", "r");
 
 	if (file) {
@@ -2045,7 +2045,7 @@ void end_for(void){
 
 
 	}
-	
+
 
 	generateCode(instruction);
 
@@ -2128,5 +2128,5 @@ void initializeOutputFile(void)
 
 
 	fclose(assembly);
-	
+
 }

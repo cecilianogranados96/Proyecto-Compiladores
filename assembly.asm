@@ -96,3 +96,9 @@
 	int 0x80
 %endmacro
 
+global main
+main:
+
+
+	ret
+

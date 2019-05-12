@@ -1,16 +1,6 @@
 
-
-int FUNCION() {
- int a = 3;
-}
-
-int main(){
+void main(){
     
-    int uno = 1;
+    printf("EJEMPLO. ");
     
-    FUNCION();
-    
-    for (uno = 2;uno<4;uno++){
-      uno++;
-    }
 }

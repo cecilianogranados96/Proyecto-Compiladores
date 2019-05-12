@@ -13,24 +13,11 @@ int lineNumber = 1;
 char fileName[50];
 extern void initializeList(void);
 extern void initializeTable(void);
-#include "preprocessor/preprocessor.c"
 int main(int argc, char *argv[]){
-	FILE *validFile;
-	if (argc == 2){
-		strcpy(fileName, argv[1]);
-		validFile = fopen(fileName, "r");
-	}else{
-		printf("FILE ARGUMENT NOT FOUND OR IS NOT VALID!\n\nTO RUN: './syntaxAnalyzer <filename>' \n\n");
-		return 0;
-	}
-	if (validFile == NULL){
-		printf("FILE NOT FOUND OR IT DOES NOT EXIST!\n");
-		return 0;
-	}
-	fclose(validFile);
+    strcpy(fileName, argv[1]);
 	initializeList();
 	initializeTable();
-	//initializeOutputFile();
+	initializeOutputFile();
 	parser(fileName);
 	return 0;
 }

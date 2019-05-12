@@ -72,7 +72,7 @@ void printError(char *errorType, char *token, int line, int previousColumn, int 
 
 		if (strcmp(token, "\0") == 0)
 		{
-			printf(" expected statement or declaration at the end of input\n");
+			printf(" declaración esperada o declaración al final de la entrada\n");
 		}
 		else
 		{
@@ -174,8 +174,6 @@ void printWarning(char* warning, char *token, int line, int column, const char *
 	fseek(FileTemp, cursor, SEEK_SET);
 
 	printf("%s%s:%d:%d: %s%s: %s", CWHTN, fileNameParse, line, column, CMAG, warning, CWHT);
-
-
 
 	int j = 8;
 	while (j < strlen(warningInfo))

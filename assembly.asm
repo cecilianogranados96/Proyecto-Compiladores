@@ -96,26 +96,30 @@
 	int 0x80
 %endmacro
 
-global FUNCION
-FUNCION:
+	assignConstant 0, 2 	;5000 = 2
 
-	assignConstant 4, 3 	;a = 3
+	assignID 8, 4  	;u = M
 
+	assignConstant 0, 0 	;initialize constant '5000' with 0
+	assignConstant 16, 22 	;R = 22
 
-	ret
+	assignConstant 0, 0 	;initialize constant '4' with 0
+	assignConstant 0, 0 	;initialize constant '4' with 0
+	mov [esp + 28], eax 	;temp0 =  op 
 
-global main
-main:
+	mov [esp + 28], eax 	;temp0 =  op 
 
-	call FUNCION
+	mov [esp + 36], eax 	;temp1 =  op 39
 
-	assignConstant 0, 9 	;a = 9
+	assignID 40, 12  	;b = N
 
-	addConstant 0, 7 	;a + 7
-	mov [esp + 4], eax 	;temp0 = a op 7
+	assignID 44, 12  	;d = N
 
-	assignID 0, 4  	;a = temp0
-
-
-	ret
-
+	assignConstant 48, 0 	;initialize constant 'c' with 0
+	assignConstant 52, 0 	;initialize constant 'e' with 0
+	assignConstant 56, 0 	;initialize constant 'f' with 0
+	assignConstant 60, 0 	;initialize constant 'g' with 0
+	assignConstant 64, 0 	;initialize constant 'i' with 0
+	assignConstant 68, 0 	;initialize constant 'j' with 0
+	assignConstant 72, 0 	;initialize constant 'k' with 0
+	assignConstant 76, 0 	;initialize constant 's' with 0

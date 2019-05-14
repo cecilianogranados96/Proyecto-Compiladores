@@ -1437,7 +1437,7 @@ void generateCode(char *instruction)
 	}
 	fprintf(assembly, "%s\n", instruction);
 	fclose(assembly);
-	
+
 }
 
 

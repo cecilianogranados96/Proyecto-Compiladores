@@ -107,7 +107,7 @@ int main(int argc, char *argv[]) {
 		Preprosesar(filename,"TSource.in");
     //PREPROCESO
 
-    system("./sintaxis TSource.in");
+    system("./sintaxis TSource.in > errores.tex");
 
 
 		//system("nasm -f elf64 assembly.asm -o assembly.o");

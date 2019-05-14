@@ -7,4 +7,4 @@ int main(){
     a += 7;
 
 
-    printf(a);
+    //printf(a);

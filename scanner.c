@@ -97,8 +97,8 @@ int main(int argc, char *argv[]) {
 
 		printf("Error de entrada.\n");
 		printf("El programa se podrá ejecutar de las siguientes maneras:\n\n");
-		printf("1- .//compilar archivo.c\n");
-		printf("2- .//compilar archivo.c -B\n");
+		printf("1- ./compilador archivo.c\n");
+		printf("2- ./compilador archivo.c -B\n");
 		printf("Con la opción 2 se desplegará una presentación con los detalles del programa.\n");
 
 	}else{
@@ -134,7 +134,7 @@ int main(int argc, char *argv[]) {
  		    }else{
 					printf("Argumento no reconocido.\n");
 					printf("Si desea mostrar la presentación con los detalles de compilación, ejecute el programa de la siguiente manera:\n");
-					printf(".//compilador archivo.c -B\n");
+					printf("./compilador archivo.c -B\n");
 				}
 
 

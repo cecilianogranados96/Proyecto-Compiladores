@@ -1,6 +1,11 @@
+#include "2.c"
 
 void main(){
     /* otro comentario */
-    printf("EJEMPLO.\n");
-    
+    int a = FUNCION();
+    a += 7;
+
+
+    printf(a);
+
 }

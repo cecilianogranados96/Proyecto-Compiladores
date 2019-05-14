@@ -70,7 +70,8 @@ char * clear[]={"beamer.aux",
                 "beamer.vrb",
                 "source.tex",
                 "bar_chart.tex",
-                "pie_chart.tex"};
+                "pie_chart.tex",
+								"pie_chart.tex"};
 
 
 Row getToken(void){
@@ -108,9 +109,10 @@ int main(int argc, char *argv[]) {
 
     system("./sintaxis TSource.in");
 
-		system("nasm -f elf64 assembly.asm -o assembly.o");
-		system("gcc assembly.o -o assembly");
-		system("./assembly");
+
+		//system("nasm -f elf64 assembly.asm -o assembly.o");
+		//system("gcc assembly.o -o assembly");
+		//system("./assembly");
 
     stdin = freopen("TSource.in", "r", stdin);
 

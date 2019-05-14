@@ -1,6 +1,18 @@
 
-void main(){
+
+int FUNCION() {
+ int a = 3;
+ return a;
+}
+
+
+int main(){
     
-    printf("EJEMPLO. ");
-    
+    FUNCION();
+    int a = 9;
+    a += 7;
+
+
+    printf(a);
+
 }

@@ -1,8 +1,9 @@
 #include "2.c"
 
-void main(){
+int main(){
     /* otro comentario */
-    int a = FUNCION();
+    FUNCION();
+    int a = 9;
     a += 7;
 
 

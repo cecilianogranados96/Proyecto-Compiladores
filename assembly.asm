@@ -96,8 +96,25 @@
 	int 0x80
 %endmacro
 
+global FUNCION
+FUNCION:
+
+	assignConstant 4, 3 	;a = 3
+
+
+	ret
+
 global main
 main:
+
+	call FUNCION
+
+	assignConstant 0, 9 	;a = 9
+
+	addConstant 0, 7 	;a + 7
+	mov [esp + 4], eax 	;temp0 = a op 7
+
+	assignID 0, 4  	;a = temp0
 
 
 	ret

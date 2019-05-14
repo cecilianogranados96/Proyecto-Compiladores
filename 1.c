@@ -1,12 +1,10 @@
 #include "2.c"
-
+#define A 9
 int main(){
     /* otro comentario */
     FUNCION();
-    int a = 9;
+    int a = A;
     a += 7;
 
 
     printf(a);
-
-}

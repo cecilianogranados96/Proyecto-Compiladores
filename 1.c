@@ -1,12 +1,12 @@
 #include "2.c"
-#define A 9
+#define A 1
 
 int main(){
     /* otro comentario */
     FUNCION();
     int a = A;
-    a += 7;
 
+    int tiempo_de_apertura = (a == 1) ? 12 : 9;
 
     printf(a);
 }

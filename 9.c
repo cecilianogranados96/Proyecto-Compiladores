@@ -1,78 +1,89 @@
-#define _c(C)_ (C)&('|'+3):c_()(C)>>('\n'-3) __; /**/
-#define C char*
-#define keyboard ",,B3-u;.(&*5., /(b*(1\036!a%\031m,,,,,\r\n"
-#define main(o,oo)oo(o){
-#define _ ;case
-C
-#define c_(cc)c cc=
-#define C_(sand)_O(sand)witch
-o=keyboard;
-#define __ ;break;
-C
-ccc(
-cc)
-C
-cc;
-{
-C
-cccc=
-cc;int
-#ifndef lint
-#define keyboard "dijs QH.soav Vdtnsaoh DmfpaksoQz;kkt oa, -dijs"
-#endif
-c;
-main(;c_(=(*cc);*cc++)c,for);
-#define _O(s)s
-main(0xb+(c>>5),C_(s))
-_'\v'
-:__ _'\f':
-main(c,C_(s));
-_c(8098)_c(6055)_c(14779)_c(10682)
-#define O_(O)_O(O)stem(ccc(
-_c(15276)_c(11196)_c(15150)
-#define _C ;return
-_c(11070)_c(15663)_c(11583)
-}
-__
-default
-:c_(+)o[c&__LINE__-007];
-main(c_(-)'-'-1,C_(s))_
-0214
-:_
-0216
-:c_(+)025 _
-0207
-:c_(-)4 _
-0233
-:c_(+)' '-1;
-}}c_(&)'z'+5;
-}_C cccc;
-}main(,cc)
-C
-#define O write(1,
-c="O";
-O_(sy) keyboard));
-main(;;,for);
-read(0,
-c,1);*
-c_(&)'~'+1
-;O ccc(
-c),
-'\0');
-main(*c,
-C_(s));_
-4
-:O_(sy)";kkt -oa, dijszdijs QQ"))_C
-_
-13
-:O o+' ',
-3
-)
-#undef main
-__ _ 127:O"\b \b",3)__
-default
-:O
-c,1)
-__}}}main(){
-cc();
-}
+
+#define MAin printf("%d\n"
+#define	mAIN return 0
+#define	MaiN {static
+#define	mAlN ) {if(
+#define	MA1N char*
+#define	MAiN (!!(
+#define	mAiN atoi
+#define	mAln &1<<
+#define	MAlN !=3)
+#define	MAln )&&
+#define	MAIN int
+#define	maln --,
+#define	Maln <<
+#define	MaIn ++
+#define	MalN |=
+#define	MA1n ||
+#define	malN -1
+#define	maIN *
+#define	MaIN =
+#define	ma1N )
+#define	Ma1N (
+#define	Main ;
+#define	mA1n !
+#define MAIn }
+#define	mA1N ,
+
+        					  MAIN	    mAIn
+						  Ma1N	    MAIN
+						  ma1N	    mA1N
+						  mAiN	    Ma1N
+		    MA1N ma1N mA1N maIn MaIN malN mA1N	    ma1n
+		    mA1N			  maiN	    Main
+		    MAIN      main Ma1N MAIN Ma1n mA1N MA1N maIN
+		    mAin      mAlN		  Ma1n	    MAlN
+		    mAIN      Main		  maIn	    MaIn
+	       mA1N Ma1n maln mAin MaIn		  Main	    maIn
+	       MaIN		   mAiN		  Ma1N	    Ma1N
+	       Ma1n		   maln		  maIN	    mAin
+	       MaIn		   ma1N		  ma1N	    Main
+	       ma1n		   MaIN		  mAiN	    Ma1N
+	       Ma1N		   Ma1n		  maln	    maIN
+	       mAin		   MaIn		  ma1N	    ma1N
+	       Main		   mAIn		  Ma1N	    mAIn
+	       Ma1N		   mAIn		  Ma1N	    mAIn
+	       Ma1N		   mAIn	     Ma1N mAIn	    Ma1N mAIn
+		Ma1N		  mAIn	     Ma1N mAIn	    Ma1N mAIn
+		  Ma1N		mAIn	     Ma1N   mAIn  Ma1N	 mAIn
+		    Ma1N mAIn Ma1N	     mAIn      Ma1N	 mAIn
+			 Ma1N		     Ma1n		 ma1N
+			 ma1N		     ma1N		 ma1N
+	  ma1N ma1N ma1N ma1N		     ma1N		 ma1N
+	  ma1N		 ma1N		     ma1N		 ma1N
+	  ma1N		 ma1N		     Main		 MAin
+	  mA1N maiN ma1N Main mAIN Main	     MAIn		 MAIN
+	  mAIn	Ma1N		  MAIN	     mAin		 ma1N
+	  MaiN	 MAIN		 main	       MaIN	       malN
+	  Main	  main		MaIn		 Main	     mAIN
+	  mA1N	   maiN	       MalN		   Ma1N	   MAiN
+	  maIn	    mAln      main		       ma1N
+	  MA1n	     Ma1N    MAiN		       ma1n
+	  mAln	      main  ma1N		       MA1n
+	  mAin		 MAln			       Ma1N
+	  mA1n	      MAiN  ma1n		       mAln
+	  main	      MAln  mAin		       ma1N
+	  ma1N		 ma1N	   MAln Ma1N mA1n MAiN maIn
+	  mAln		 main	   MAln
+	  Ma1N		 MAiN	   ma1n
+	  mAln	    main ma1N MA1n mAin MAln
+	  Ma1N	    mA1n		MAiN
+	  ma1n	    mAln		main
+	  MAln	    mAin		ma1N
+	  ma1N	    ma1N		ma1N
+	  ma1N	    ma1N		Maln
+	  main	    mA1N		MAiN
+	  ma1n	    mAln		main
+	  MAln	    mAin		ma1N
+	  MA1n	    MAiN		maIn
+	  mAln	     main	       MAln
+	  Ma1N	       MAiN	     ma1n
+	  mAln		 main ma1N MA1n
+	  mAin		      MAln
+	  Ma1N		      mA1n
+	  MAiN		      ma1n
+	  mAln		      main
+	  MAln		      mAin
+	  ma1N		      ma1N
+	  ma1N		      ma1N
+	  Main		      MAIn

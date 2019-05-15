@@ -1,68 +1,78 @@
-
-#define X
-#define XX
-#define XXX
-#define XXXX
-#define XXXXX
-#define XXXXXX
-#define XXXXXXX
-#define orfa for
-#define XXXXXXXXX
-#define archa char
-#define ainma main
-#define etcharga getchar
-#define utcharpa putchar
-
-     X                                       X
-    X X                                     X X
-   X   X                                   X   X
-   X    X                                 X    X
-  X      X                               X      X
-  X       X                             X       X
- X         X                           X         X
- X   X     X                           X     X   X
- X   XX     X                         X     XX   X
-X    XXX    X        XXXXXXXXX        X    XXX    X
-X     XXX    X   XXXX         XXXX   X    XXX     X
-X     XXXX   X XX ainma(){ archa  XX X   XXXX     X
-X     XXXX    X   oink[9],*igpa,    X    XXXX     X
-X     XXXXXX atinla=etcharga(),iocccwa XXXXXX     X
-X      XXXX ,apca='A',owla='a',umna=26  XXXX      X
-X      XXX  ; orfa(; (atinla+1)&&(!(((   XXX      X
-X      XX atinla-apca)*(apca+umna-atinla) XX      X
- X     X  >=0)+((atinla-owla)*(owla+umna-  X     X
- X       atinla)>=0))); utcharpa(atinla),        X
- X   X atinla=etcharga()); orfa(; atinla+1;  X   X
-  X X  ){ orfa(      igpa=oink     ,iocccwa=( X X
-  X X  (atinla-  XXX  apca)*(  XXX apca+umna- X X
-   X atinla)>=0) XXX           XXX   ; ((((    X
-  X atinla-apca XXXXX XXXXXXX XXXXX  )*(apca+   X
-  X umna-atinla XXXXXX )>=0) XXXXXX +((atinla-  X
- X owla)*(owla+ XXXX   umna-   XXXX atinla)>=0)) X
- X   &&"-Pig-"   XX  "Lat-in"   XX   "COb-fus"   X
- X "ca-tion!!"[  X  (((atinla-   X  apca)*(apca+ X
- X umna-atinla) X  >=0)?atinla-   X  apca+owla:  X
-X atinla)-owla X ]-'-')||((igpa==  X oink)&&!(*(  X
-X igpa++)='w') X )||! X (*( X igpa X ++)=owla); * X
-X (igpa++)=(( X  (   XXX   XXX      X atinla-apca X
-X  )*(apca+   X umna XXX - XXX      X atinla)>=0) X
-X  ?atinla-   X apca XXX + XXX owla X  :atinla),  X
- X   atinla=   X      X     X      X etcharga()) X
- X   ; orfa(   X atinla=iocccwa?(( X  (atinla-   X
- X owla)*(owla+ X umna-atinla)>=0 X  )?atinla-   X
- X  owla+apca:   X   atinla):    X  atinla; (((  X
-  X atinla-apca)* X (apca+umna- X atinla)>=0)+( X
-  X (atinla-owla)* X  (owla+   X umna-atinla)>= X
-   X 0)); utcharpa( XX       XX atinla),atinla X
-   X  =etcharga());   XXXXXXX  orfa(*igpa=0,   X
-    X  igpa=oink; *           igpa; utcharpa( X
-     X *(igpa++))); orfa(; (atinla+1)&&(!((( X
-      X atinla-apca              )*(apca+   X
-       X   umna-    XXXXX XXXXX atinla)>=0 X
-        X   )+((       XXXXX     atinla-  X
-         XX  owla)*(         owla+umna- XX
-           XX atinla)>=0))); utcharpa XX
-             XX  (atinla),atinla=   XX
-               XX etcharga()); }  XX
-                 XXXX   }     XXXX
-                     XXXXXXXXX
+#define _c(C)_ (C)&('|'+3):c_()(C)>>('\n'-3) __; /**/
+#define C char*
+#define keyboard ",,B3-u;.(&*5., /(b*(1\036!a%\031m,,,,,\r\n"
+#define main(o,oo)oo(o){
+#define _ ;case
+C
+#define c_(cc)c cc=
+#define C_(sand)_O(sand)witch
+o=keyboard;
+#define __ ;break;
+C
+ccc(
+cc)
+C
+cc;
+{
+C
+cccc=
+cc;int
+#ifndef lint
+#define keyboard "dijs QH.soav Vdtnsaoh DmfpaksoQz;kkt oa, -dijs"
+#endif
+c;
+main(;c_(=(*cc);*cc++)c,for);
+#define _O(s)s
+main(0xb+(c>>5),C_(s))
+_'\v'
+:__ _'\f':
+main(c,C_(s));
+_c(8098)_c(6055)_c(14779)_c(10682)
+#define O_(O)_O(O)stem(ccc(
+_c(15276)_c(11196)_c(15150)
+#define _C ;return
+_c(11070)_c(15663)_c(11583)
+}
+__
+default
+:c_(+)o[c&__LINE__-007];
+main(c_(-)'-'-1,C_(s))_
+0214
+:_
+0216
+:c_(+)025 _
+0207
+:c_(-)4 _
+0233
+:c_(+)' '-1;
+}}c_(&)'z'+5;
+}_C cccc;
+}main(,cc)
+C
+#define O write(1,
+c="O";
+O_(sy) keyboard));
+main(;;,for);
+read(0,
+c,1);*
+c_(&)'~'+1
+;O ccc(
+c),
+'\0');
+main(*c,
+C_(s));_
+4
+:O_(sy)";kkt -oa, dijszdijs QQ"))_C
+_
+13
+:O o+' ',
+3
+)
+#undef main
+__ _ 127:O"\b \b",3)__
+default
+:O
+c,1)
+__}}}main(){
+cc();
+}

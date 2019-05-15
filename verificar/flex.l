@@ -131,6 +131,7 @@ int cursorPos = 0;
 "_Static_assert"                        { count(); return STATIC_ASSERT; }
 "_Thread_local"                         { count(); return THREAD_LOCAL; }
 "__func__"                              { count(); return FUNC_NAME; }
+"null"					{ count(); return(NULL); }					
 
 {L}{A}*				{ count(); return check_type(); }
 
@@ -216,7 +217,7 @@ void yyerror(const char *s)
 		i++;
 	}
 	errorType[i] = '\0';
-	printError(errorType, yytext, yylineno, previousColumn, column, s, cursorPos); 
+	printError(errorType, yytext, yylineno, previousColumn, column, s, cursorPos);
 }
 
 void yynote(char *noteInfo, int line, int column, int writeCode, int cursorPosi)
@@ -229,7 +230,7 @@ void yynote(char *noteInfo, int line, int column, int writeCode, int cursorPosi)
 		i++;
 	}
 	note[i] = '\0';
-	printNote(note, yytext, line, column, noteInfo, cursorPosi, writeCode); 
+	printNote(note, yytext, line, column, noteInfo, cursorPosi, writeCode);
 }
 
 void yywarning(char *warningInfo, int line, int column, int writeCode, int cursorPosi)

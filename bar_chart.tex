@@ -1,0 +1,27 @@
+\begin{frame}[fragile]{Histograma} 
+\begin{tikzpicture}     
+\begin{axis}[ybar, enlargelimits=0.15, x tick label style={rotate=45, anchor=east},    symbolic x coords={KEYWORD, 
+IDENTIFIER, 
+CONSTANTLITERAL, 
+OPERATOR, 
+PUNCTUATOR, 
+COMMENT, 
+PREPROCESSOR, 
+CONSTANTCHAR, 
+CONSTANTSTRING, 
+ERROR, 
+},xtick=data,width=11cm,height=7cm] 
+ \addplot coordinates {(KEYWORD,624643237) 
+(IDENTIFIER,32631) 
+(CONSTANTLITERAL,624643235) 
+(OPERATOR,32623) 
+(PUNCTUATOR,21) 
+(COMMENT,0) 
+(PREPROCESSOR,0) 
+(CONSTANTCHAR,0) 
+(CONSTANTSTRING,0) 
+(ERROR,0) 
+};
+\end{axis}  
+\end{tikzpicture} 
+\end{frame}

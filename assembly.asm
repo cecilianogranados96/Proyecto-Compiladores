@@ -116,3 +116,6 @@ main:
 
 	assignID 0, 4  	;a = temp0
 
+
+	ret
+

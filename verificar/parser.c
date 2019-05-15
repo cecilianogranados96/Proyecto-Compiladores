@@ -72,7 +72,7 @@ void printError(char *errorType, char *token, int line, int previousColumn, int 
 
 		if (strcmp(token, "\0") == 0)
 		{
-			printf(" declaración esperada o declaración al final de la entrada\n");
+			printf(" sentencia o declaración esperada al final de la entrada\n");
 		}
 		else
 		{

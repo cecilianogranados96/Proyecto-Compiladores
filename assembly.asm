@@ -96,10 +96,8 @@
 	int 0x80
 %endmacro
 
-global FUNCION
-FUNCION:
-
-	assignConstant 4, 3 	;a = 3
+global funcion
+funcion:
 
 
 	ret
@@ -107,27 +105,9 @@ FUNCION:
 global main
 main:
 
-	call FUNCION
+	call funcion
 
-	assignConstant 0, 1 	;a = 1
+	call funcion
 
-	mov eax, [esp + 0]
-
-	cmp eax, 1
-	je compL0 	;compare a == 1, jmp if false
-	mov eax, 1
-	jmp exitComp0
-
-compL0:
-	mov eax, 0
-
-exitComp0:
-	mov [esp + 8], eax 	;temp0 = a op 1
-
-	mov [esp + 8], eax 	;temp0 = a op 1
-
-	mov [esp + 12], eax 	;temp1 =  op 9
-
-
-	ret
+	mov [esp + 4], eax 	;temp0 = #ü op 
 

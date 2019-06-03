@@ -1,17 +1,13 @@
+int funcion(){
 
-
-int FUNCION() {
- int a = 3;
- return a;
+ return 3;
 }
+int main()
+{
+ int a = funcion();
+ for (int i = 0; i < 5; i++)
+ {
+  a = i;
+ }
 
-
-int main(){
-    
-    FUNCION();
-    int a = 1;
-
-    int tiempo_de_apertura = (a == 1) ? 12 : 9;
-
-    printf(a);
 }

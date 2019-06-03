@@ -106,12 +106,8 @@ int main(int argc, char *argv[]) {
     //PREPROCESO
 		Preprosesar(filename,"TSource.in");
     //PREPROCESO
-
+		
     system("./sintaxis TSource.in");
-
-		//system("nasm -f elf64 assembly.asm -o assembly.o");
-		//system("gcc assembly.o -o assembly");
-		//system("./assembly");
 
     stdin = freopen("TSource.in", "r", stdin);
 

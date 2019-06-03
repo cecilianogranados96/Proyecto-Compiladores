@@ -34,6 +34,11 @@ int parser(char fileNamePar[])
 		printf("\n\nCompilacion terminada con %d errores.\n", numberOfErrors);
 	}
 
+	if (numberOfErrors == 0){
+		system("nasm -f elf64 assembly.asm -o assembly.o");
+		system("gcc assembly.o -o assembly");
+	}
+
 	return 0;
 }
 

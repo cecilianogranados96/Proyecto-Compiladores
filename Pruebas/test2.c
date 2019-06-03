@@ -1,6 +1,5 @@
-int main ()
-{
-	int x; 
+int main (){
+	int x;
 	switch(x){
 
 		case 2:

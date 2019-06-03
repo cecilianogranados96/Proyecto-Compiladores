@@ -104,9 +104,9 @@ void save_id(void)
 			SymbolTable *symbol = getSymbolInPos(pos);
 			char error[100] = "";
 			char note[100] = "";
-			sprintf(error, "Error semántico, redeclaracion  de %s'%s'%s sin vinculacion", CWHTN, token, CWHT);
+			sprintf(error, "semantic error, redeclaration of %s'%s'%s with no linkage", CWHTN, token, CWHT);
 			yyerror(error);
-			sprintf(note, "nota, previa declaración de %s‘%s’%s fue aqui", CWHTN, symbol -> varName, CWHT);
+			sprintf(note, "note, previous declaration of %s‘%s’%s was here", CWHTN, symbol -> varName, CWHT);
 			yynote(note, symbol -> line, symbol -> column, TRUE, symbol -> cursorPosi);
 		}
 	}
@@ -115,9 +115,9 @@ void save_id(void)
 		SemanticRecord* RS = getSemanticRecordInPos(pos);
 		char error[100] = "";
 		char note[100] = "";
-		sprintf(error, "Error semántico, redeclaracion  de %s'%s'%s sin vinculacion", CWHTN, token, CWHT);
+		sprintf(error, "semantic error, redeclaration of %s'%s'%s with no linkage", CWHTN, token, CWHT);
 		yyerror(error);
-		sprintf(note, "nota, previa declaración de %s‘%s’%s fue aqui", CWHTN, RS -> currentToken, CWHT);
+		sprintf(note, "note, previous declaration of %s‘%s’%s was here", CWHTN, RS -> currentToken, CWHT);
 		yynote(note, RS -> line, RS -> column, TRUE, RS -> cursorPosi);
 	}
 
@@ -325,13 +325,13 @@ void checkForDeclaredError(char *token, SemanticRecord* R)
 		if (!look_up_error_TS_ID(token))
 		{
 			char error[100];
-			sprintf(error, "Error semántico, %s'%s'%s no declarado (primer uso en esta función)", CWHTN, token, CWHT);
+			sprintf(error, "semantic error, %s'%s'%s undeclared (first use in this function)", CWHTN, token, CWHT);
 			yyerror(error);
 
 			if (unDecleared == FALSE)
 			{
 				char note[100];
-				sprintf(note, "nota, cada identificador no declarado se reporta solo una vez por cada función que la que aparece ");
+				sprintf(note, "note, each undeclared identifier is reported only once for each function it appears in");
 				yynote(note, R -> line, R -> column, FALSE, R -> cursorPosi);
 				unDecleared = TRUE;
 			}
@@ -531,7 +531,7 @@ void writeCodeNeeded(DO_Data* op1, int operator, DO_Data* op2, SemanticRecord* d
 			if (operator == '/')
 			{
 				char warning[100];
-				sprintf(warning, "warning, division entre cero [-Wdiv-by-zero]");
+				sprintf(warning, "warning, division by zero [-Wdiv-by-zero]");
 				yywarning(warning, op2 -> line, op2 -> column, TRUE, op2 -> cursorPosi);
 
 			sprintf(instruction, "\tmov eax, %s\n\tmov ecx, %s\n\tdiv eax\n", op1 -> value, op2 -> value);
@@ -1409,7 +1409,7 @@ void process_function(void)
 	if (symbol -> stackPos == -1)
 	{
 		char warning[100];
-		sprintf(warning, "alerta, declaración implícita de la función %s‘%s’%s ", CWHTN, id, CWHT);
+		sprintf(warning, "warning, implicit declaration of function %s‘%s’%s [-Wimplicit-function-declaration]", CWHTN, id, CWHT);
 		yywarning(warning, RS -> line, RS -> column, TRUE, RS -> cursorPosi);
 	}
 
@@ -1428,7 +1428,6 @@ void call_functionNoParams(void)
 }
 void generateCode(char *instruction)
 {
-
 	if(inTempFile){
 		assembly = fopen("temp_for.txt", "a");
 
@@ -1437,7 +1436,6 @@ void generateCode(char *instruction)
 	}
 	fprintf(assembly, "%s\n", instruction);
 	fclose(assembly);
-
 }
 
 
@@ -1467,7 +1465,7 @@ void eval_unary(void)
 		else
 		{
 			char error[100];
-			sprintf(error, "Error semántico, lvalue required as increment operand");
+			sprintf(error, "semantic error, lvalue required as increment operand");
 			yyerror(error);
 		}
 
@@ -2030,7 +2028,6 @@ void end_for(void){
 	FILE *file;
 	int c;
 	int i = 0;
-
 	file = fopen("temp_for.txt", "r");
 
 	if (file) {
@@ -2042,8 +2039,7 @@ void end_for(void){
 		instruction[i] = '\0';
 
 		fclose(file);
-
-
+		//remove("temp_for.txt");
 	}
 
 
@@ -2095,7 +2091,7 @@ void process_break(void)
 	}
 
 	else
-		yyerror("Error semántico, declaración de ruptura no dentro de bucle o switch");
+		yyerror("semantic error, break statement not within loop or switch");
 
 
 
@@ -2104,7 +2100,6 @@ void process_break(void)
 
 void initializeOutputFile(void)
 {
-
 
 	assembly = fopen("assembly.asm", "w");
 

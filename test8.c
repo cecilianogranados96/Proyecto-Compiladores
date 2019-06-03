@@ -1,23 +1,16 @@
 int main()
 {
-	char x1 = 'y';
-	char x2 = 'a';
-	char x3 = 'p';
-	char x4 = 'a';
-	char x5 = 's';
-	char x6 = 'a';
-	char x7 = 'm';
-	char x8 = 'o';
-	char x9 = 's';
-	char x10 = 'c';
-	char x11 = 'o';
-	char x12 = 'm';
-	char x13 = 'p';
-	char x14 = 'i';
+	int a = 1;
+	int b = 2;
+	int c = 3;
+	int d = 4;
+	int e = 5;
+	int f = 6;
+	int g = 7;
 
-	int nota = (x1 + x2 + x3 + x4 + x5) / 100;
+	int resultado = (a+b+c+d+e+f+g) / 14;
 
-	if(nota == 70){
-		nota = 0;
+	if(resultado == 2){
+		resultado = 0;
 	}
 }
